@@ -1,41 +1,4 @@
-name: Deploy to AWS EC2
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Source
-        uses: actions/checkout@v4
-
-      - name: Deploy to EC2
-        uses: appleboy/ssh-action@v1.0.3
-
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ubuntu
-          key: ${{ secrets.EC2_SSH_KEY }}
-
-          script: |
-            cd ~/clouddeploy-cicd-platform
-
-            git pull origin main
-
-            docker build -t clouddeploy:v1 .
-
-            docker stop clouddeploy || true
-
-            docker rm clouddeploy || true
-
-            docker run -d \
-              --name clouddeploy \
-              -p 80:80 \
-              clouddeploy:vname: Deploy CloudDeploy App
+name: Deploy CloudDeploy App
 
 on:
   push:
@@ -52,12 +15,10 @@ jobs:
 
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.2.0
-
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
-
           script: |
             cd ~/clouddeploy-cicd-platform
 
@@ -71,4 +32,4 @@ jobs:
             docker run -d \
               --name clouddeploy \
               -p 80:80 \
-              clouddeploy:v11
+              clouddeploy:v1
