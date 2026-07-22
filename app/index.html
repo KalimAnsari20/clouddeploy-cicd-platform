@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>CloudDeploy CI/CD Platform</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<header>
+
+<h1>CloudDeploy CI/CD Platform</h1>
+
+<p>DevOps Infrastructure Monitoring Dashboard</p>
+
+<p id="clock"></p>
+
+</header>
+
+<section class="cards">
+
+<div class="card">
+
+<h2>AWS EC2</h2>
+
+<p class="status online">Running</p>
+
+</div>
+
+<div class="card">
+
+<h2>Docker</h2>
+
+<p class="status online">Healthy</p>
+
+</div>
+
+<div class="card">
+
+<h2>Nginx</h2>
+
+<p class="status online">Running</p>
+
+</div>
+
+<div class="card">
+
+<h2>GitHub Actions</h2>
+
+<p class="status online">Success</p>
+
+</div>
+
+</section>
+
+<section class="metrics">
+
+<div class="metric">
+
+<h3>CPU Usage</h3>
+
+<div class="bar">
+
+<div class="fill cpu"></div>
+
+</div>
+
+</div>
+
+<div class="metric">
+
+<h3>Memory</h3>
+
+<div class="bar">
+
+<div class="fill memory"></div>
+
+</div>
+
+</div>
+
+<div class="metric">
+
+<h3>Disk Usage</h3>
+
+<div class="bar">
+
+<div class="fill disk"></div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="table">
+
+<h2>Recent Alerts</h2>
+
+<table>
+
+<tr>
+
+<th>Time</th>
+
+<th>Severity</th>
+
+<th>Message</th>
+
+</tr>
+
+<tr>
+
+<td>10:30</td>
+
+<td>Info</td>
+
+<td>Docker Container Started</td>
+
+</tr>
+
+<tr>
+
+<td>11:00</td>
+
+<td>Warning</td>
+
+<td>CPU reached 75%</td>
+
+</tr>
+
+<tr>
+
+<td>11:20</td>
+
+<td>Info</td>
+
+<td>Deployment Successful</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
